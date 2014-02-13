@@ -1,0 +1,26 @@
+doctype html
+html(lang='zh-CN')
+  head
+    meta(charset='utf-8')
+    title yofineBlog
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/css/write.css')
+  body
+    #write
+      form(role='form', method='post')
+        .row.write-header
+          .col-md-6.col-xs-12.write-title
+            label.sr-only(for='title')
+            input#title.form-control.input-lg(type='text', name='title', value='', placeholder='标题')
+          .col-md-6.col-xs-12.write-title
+            label.sr-only(for='tag')
+            input#title.form-control.input-lg(type='text', name='tag', value='', placeholder='标签')
+        .row.write-body
+          .col-md-6.col-xs-12.write-content
+            #wmd-button-bar.editor
+            label.sr-only(for='content')
+            textarea#wmd-input.form-control.mono.mousetrap(name='content', rows='27')
+          #wmd-preview.col-md-6.col-xs-12.write-preview.fmt
+        .row.write-footer
+          .col-md-6.col-xs-12.write-submit
+            button.btn.btn-primary.btn-xl.action(type='submit', tabindex='8') Publish

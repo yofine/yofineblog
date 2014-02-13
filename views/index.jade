@@ -1,0 +1,77 @@
+doctype html
+html(lang='zh-CN')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title yofineBlog
+    link(rel='stylesheet', href='css/pure-min.css')
+    link(rel='stylesheet', href='css/main-grid.css')
+    link(rel='stylesheet', href='css/home.css')
+    link(rel='stylesheet', href='css/highlight/styles/solarized_dark.css')
+    script(src='css/highlight/highlight.pack.js')
+    script.
+      hljs.initHighlightingOnLoad();
+  body
+    header#header
+      #canvas-frame
+    .l-content.pricing-tables
+      .content.pure-u-1.pure-u-med-3-4
+        .posts
+          h1.content-subhead RECENT POSTS
+          each i in recents
+            section.post
+              header.post-header
+                a.post-title(href='/read/#{i.title}', title='#{i.title}'): h2  #{i.title}
+                p.post-meta
+                  a.post-category.post-category-1() #{i.tag}
+              .post-description !{i.content}
+              p.post-time #{i.time}
+    .l-content
+      .pricing-tables.pure-g
+        .pure-u-1.pure-u-med-1-3
+          .pricing-table.pricing-table-free
+            .pricing-table-header
+              h2
+              a.span.pricing-table-price(href='list/node')
+                | Node
+                span
+        .pure-u-1.pure-u-med-1-3
+          .pricing-table.pricing-table-biz.pricing-table-selected
+            .pricing-table-header
+              h2
+              a.span.pricing-table-price(href='list/linux')
+                | Linux
+                span
+        .pure-u-1.pure-u-med-1-3
+          .pricing-table.pricing-table-enterprise
+            .pricing-table-header
+              h2
+              a.span.pricing-table-price(href='list/nosql')
+                | NoSql
+                span
+        .pure-u-1.pure-u-med-1-3
+          .pricing-table.pricing-table-enterprise
+            .pricing-table-header
+              h2
+              a.span.pricing-table-price(href='list/html')
+                | Html
+                span
+        .pure-u-1.pure-u-med-1-3
+          .pricing-table.pricing-table-biz.pricing-table-selected
+            .pricing-table-header
+              h2
+              a.span.pricing-table-price(href='list/js')
+                | JS
+                span
+        .pure-u-1.pure-u-med-1-3
+          .pricing-table.pricing-table-free
+            .pricing-table-header
+              h2
+              a.span.pricing-table-price(href='list/css')
+                | Css
+                span
+      .footer.l-box
+        p
+          a(href='https://github.com/yofine') Github
+      script(src='js/three.min.js')
+      script(src='js/canvas.js')

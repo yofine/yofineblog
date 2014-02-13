@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title yofineBlog
+    link(rel='stylesheet', href='/css/highlight/styles/solarized_dark.css')
+    link(rel='stylesheet', href='/css/pure-min.css')
+    link(rel='stylesheet', href='/css/read.css')
+    script(src='/css/highlight/highlight.pack.js')
+    script.
+      hljs.initHighlightingOnLoad();
+  body
+    #layout
+      a#menuLink.menu-link(href='#menu')
+        span
+      #menu
+        .pure-menu.pure-menu-open
+          a.pure-menu-heading(href='#') Read
+          ul
+            li
+              a(href='/') Home
+            li.menu-item-divided.pure-menu-selected
+              a(href='#') Anonymous
+      #main
+        .header
+          h1 #{article.title}
+        .content !{article.content}
+    script(src='/js/read-ui.js')

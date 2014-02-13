@@ -1,0 +1,27 @@
+{
+  "name": "yofineblog",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.4.8",
+    "jade": "*",
+    "markdown": "~0.5.0",
+    "mongoose": "~3.8.6",
+    "strftime": "~0.8.0",
+    "pagedown": "~1.1.0",
+    "marked": "~0.3.1",
+    "highlight.js": "~8.0.0"
+  },
+  "description": "yofine's blog",
+  "main": "app.js",
+  "devDependencies": {},
+  "keywords": [
+    "yofine",
+    "blog"
+  ],
+  "author": "yofine",
+  "license": "MIT"
+}

@@ -1,0 +1,35 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title yofineBlog
+    link(rel='stylesheet', href='/css/pure-min.css')
+    link(rel='stylesheet', href='/css/main-grid.css')
+    link(rel='stylesheet', href='/css/list.css')
+  body
+    #layout.pure-g
+      .sidebar.pure-u-1.pure-u-med-1-4
+        .header
+          hgroup
+            if articles[0]
+              -var article = articles[0]
+                h1.brand-title #{article.tag}
+            else
+              h1.brand-title no articles
+          nav.nav
+            ul.nav-list
+              li.nav-item
+                a.pure-button(href='/') Home
+      .content.pure-u-1.pure-u-med-3-4
+        div
+          .posts
+            h1.content-subhead Recent Posts
+            each i in articles
+              section.post
+                header.post-header
+                  a.post-title(href='/read/#{i.title}'): h2 #{i.title}
+                .post-description !{i.content}
+                p.post-time #{i.time}
+            .footer
+            .pure-menu.pure-menu-horizontal.pure-menu-open
